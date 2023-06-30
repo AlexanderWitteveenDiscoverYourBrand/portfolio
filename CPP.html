@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <title>Portfolio - Alexander Witteveen</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/2b325ed006.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="headerGEMEENTEARNHEM">
+        <div class="container">
+                <nav>
+                        <a href="Index.html">
+                                <img src="Logo/SVG/SVG/Asset 5.svg" class="logo1"/>
+                        </a>
+                        
+                        <ul id="sidemenu">
+                                <li><a href="Index.html">Home</a></li>
+                                <li><a href="Index.html">Portfolio</a></li>
+                                <li><a href="Index.html">Over</a></li>
+                                <li><a href="Index.html">Diensten</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                        </ul>
+                        <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+                </nav>
+                <div class="slider">
+                    <figure>
+                        <div class="slide">
+                            <h1>Concurrentie onderzoek</h1>
+                            <img src="CPP/CPP onderzoek.png" alt="">
+                        </div>
+                        <div class="slide">
+                            <h1>Ontwerp direct mails</h1>
+                            <img src="CPP/CPP Ontwerp.png" alt="">
+                        </div>
+                        <div class="slide">
+                            <h1>Test</h1>
+                            <img src="CPP/CPP test.png" alt="">
+                        </div>
+                        <div class="slide">
+                            <h1>Implementatie in BMC's</h1>
+                            <img src="CPP/CPP implem.png" alt="">
+                    </figure>
+                </div>
+
+                <div class="gemeente-text">
+                        <h1>Voor het bedrijf Cocktails Per Post produceerde ik in groepsverband een conceptstrategie voor het bereiken van de zakelijke klant. Hierboven zie je per fase mijn bijdrage. Neem hieronder contact op voor meer informatie over dit project.</h1>
+        </div>
+</div>
+<!--contact-->
+<div id="contact">
+        <div class="container">
+                <div class="row">
+                       <div class="contact-left">
+                        <h1 class= "subtitle">Neem contact op</h1>
+                        <p><i class="fa-solid fa-paper-plane"></i>Alexander.witteveen@hotmail.nl</p>
+                        <p><i class="fa-solid fa-square-phone"></i>06 38303662</p>
+                        <div class="social-icons">
+                                <a href="https://www.instagram.com/alex_witteveen_/"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="https://www.linkedin.com/in/alexander-witteveen-11620b209/"><i class="fa-brands fa-likedin"></i></a>
+                                <a href="https://www.whatsapp.nl/"><i class="fa-brands fa-square-whatsapp"></i></a>
+                        </div>
+                        <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
+                       </div> 
+                       <div class="contact-ricght"></div> 
+                       <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Naam" required>
+                        <input type="E-mail" name="email" placeholder="Je E-mail" required>
+                        <textarea name="Bericht" id="" rows="6" placeholder="Typ je bericht"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                       </form>
+                </div>
+        </div>
+        <div class="copyright"></div>
+        <p>Copyright © Alexander Witteveen</p>
+</div>
+
+
+<script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+       
+       function opentab(tabname){
+        for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab")
+       }
+</script>
+<script>
+
+        var sidemeu = document.getElementById("sidemenu");
+
+        function openmenu(){
+                sidemeu.style.right = "0";
+        }
+        function closemenu(){
+                sidemeu.style.right = "-200px";
+        }
+        
+</script>
+<script>
+    const scriptURL = '<https://script.google.com/macros/s/AKfycbzqjre_Gx6GX3VcZSZALbSaVpysELlE8xNDS0lb5a-vbH3b6Lja8G5EzFmQQq9EmvWR/exec>'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
+
